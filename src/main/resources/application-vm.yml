@@ -1,0 +1,6 @@
+server:
+  port: 8088
+people:
+  name: Chao
+  age: 25
+  content: "Name : ${name}, age ${age}"
