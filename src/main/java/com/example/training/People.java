@@ -1,16 +1,29 @@
 package com.example.training;
 
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.stereotype.Component;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
-@Component
-@ConfigurationProperties(prefix="people")
+@Entity
 public class People {
+	
+	@Id
+	private Integer id;
+	
 	private String name;
 	
-	private String content;
-	
 	private Integer age;
+	
+	public People() {
+		super();
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
 	public String getName() {
 		return name;
@@ -18,14 +31,6 @@ public class People {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public String getContent() {
-		return content;
-	}
-
-	public void setContent(String content) {
-		this.content = content;
 	}
 
 	public Integer getAge() {
