@@ -13,8 +13,10 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.training.domain.MyResult;
 import com.example.training.domain.People;
 import com.example.training.repository.MyRespository;
+import com.example.training.util.MyResultUtil;
 
 @RestController
 public class MyController {
@@ -40,15 +42,16 @@ public class MyController {
 	 * @return 所添加的数据
 	 */
 	@PostMapping("/insert")
-	public People insertPeople(@Valid People people, BindingResult result) {
+	public MyResult<Object> insertPeople(@Valid People people, BindingResult result) {
 		if (result.hasErrors()) {
-			String eString = result.getFieldError().getDefaultMessage();
-			System.out.println(eString);
-			return null;
+			
+			return MyResultUtil.failed(result.getFieldError().getDefaultMessage());
 		}
 		people.setName(people.getName());
 		people.setAge(people.getAge());
-		return repository.save(people);
+		
+		
+		return MyResultUtil.success(repository.save(people));
 	}
 
 	/**
