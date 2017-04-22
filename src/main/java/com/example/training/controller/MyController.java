@@ -22,7 +22,7 @@ import com.example.training.util.MyResultUtil;
 public class MyController {
 
 	@Autowired
-	private MyRespository repository;
+	private MyRespository<People> repository;
 
 	/**
 	 * 查询所有数据
@@ -63,6 +63,10 @@ public class MyController {
 	@GetMapping(value = "/find/{id}")
 	public People getPerson(@PathVariable("id") Integer id) {
 		return repository.findOne(id);
+	}
+	
+	public List<People> getPersonByName(@PathVariable("name") String name){
+		return repository.findByName(name);
 	}
 
 	/**
