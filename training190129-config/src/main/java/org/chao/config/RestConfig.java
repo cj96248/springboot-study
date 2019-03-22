@@ -1,10 +1,10 @@
-package com.chao.training0129.config;
+package org.chao.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.AsyncRestTemplate;
 
-@Configuration
+//@Configuration
 public class RestConfig {
 
 	@Bean

@@ -1,5 +1,6 @@
-package com.chao.training0129.web;
+package org.chao.web;
 
+import org.chao.entity.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.concurrent.FailureCallback;
@@ -8,8 +9,6 @@ import org.springframework.util.concurrent.SuccessCallback;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.AsyncRestTemplate;
-
-import com.chao.training0129.entity.Student;
 
 import lombok.extern.slf4j.Slf4j;
 

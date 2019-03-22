@@ -1,4 +1,4 @@
-package com.chao.training0129.entity;
+package org.chao.entity;
 
 import lombok.Data;
 import lombok.experimental.Accessors;
